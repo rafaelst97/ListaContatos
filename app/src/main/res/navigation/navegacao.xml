@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navegacao">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegacao"
+    app:startDestination="@id/listaContatosFragment">
 
+    <fragment
+        android:id="@+id/listaContatosFragment"
+        android:name="br.univali.pdm.listacontatos.ListaContatosFragment"
+        android:label="fragment_lista_contatos"
+        tools:layout="@layout/fragment_lista_contatos" >
+        <action
+            android:id="@+id/action_listaContatosFragment_to_adicionarContatoFragment"
+            app:destination="@id/adicionarContatoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adicionarContatoFragment"
+        android:name="br.univali.pdm.listacontatos.AdicionarContatoFragment"
+        android:label="fragment_adicionar_contato"
+        tools:layout="@layout/fragment_adicionar_contato" >
+        <action
+            android:id="@+id/action_adicionarContatoFragment_to_listaContatosFragment"
+            app:destination="@id/listaContatosFragment" />
+    </fragment>
 </navigation>

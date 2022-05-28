@@ -35,11 +35,9 @@ class AdicionarContatoFragment : Fragment() {
 
         val view: View
         val botaoSalvarAdicionar: Button
-        val botaoCancelarAdicionar: Button
 
         view = inflater.inflate(R.layout.fragment_adicionar_contato, container, false)
         botaoSalvarAdicionar = view.findViewById(R.id.botaoSalvarAdicionar)
-        botaoCancelarAdicionar = view.findViewById(R.id.botaoCancelarAdicionar)
 
 
         return inflater.inflate(R.layout.fragment_adicionar_contato, container, false)
