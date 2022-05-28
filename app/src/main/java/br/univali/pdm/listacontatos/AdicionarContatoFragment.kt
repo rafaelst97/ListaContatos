@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,12 +40,6 @@ class AdicionarContatoFragment : Fragment() {
         view = inflater.inflate(R.layout.fragment_adicionar_contato, container, false)
         botaoSalvarAdicionar = view.findViewById(R.id.botaoSalvarAdicionar)
         botaoCancelarAdicionar = view.findViewById(R.id.botaoCancelarAdicionar)
-
-        botaoSalvarAdicionar.setOnClickListener(View.OnClickListener {
-
-
-
-        })
 
 
         return inflater.inflate(R.layout.fragment_adicionar_contato, container, false)

@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun setFragment(fragment: Fragment){
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(R.id.fragmentContainerView, fragment)
+        fragmentTransition.addToBackStack(null)
         fragmentTransition.commit()
     }
 
