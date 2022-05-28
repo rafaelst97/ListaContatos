@@ -3,7 +3,7 @@ package br.univali.pdm.listacontatos
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -18,13 +18,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         adicionarContato = findViewById(R.id.adicionarContato)
+
         adicionarContato.setOnClickListener(this)
 
         listaContatosFragment = ListaContatosFragment()
         adicionarContatoFragment = AdicionarContatoFragment()
+        setFragment(listaContatosFragment)
     }
 
-    private fun setFragment(fragment: AdicionarContatoFragment){
+    private fun setFragment(fragment: Fragment){
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(R.id.fragmentContainerView, fragment)
         fragmentTransition.commit()
@@ -37,7 +39,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 setFragment(adicionarContatoFragment)
             }
         }
-
     }
-
 }
