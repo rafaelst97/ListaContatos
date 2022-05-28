@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,14 +34,14 @@ class AdicionarContatoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view: View
-        val botaoSalvarAdicionar: Button
+        val view = inflater.inflate(R.layout.fragment_adicionar_contato, container, false)
+        view.findViewById<Button>(R.id.botaoSalvarAdicionar).setOnClickListener {
 
-        view = inflater.inflate(R.layout.fragment_adicionar_contato, container, false)
-        botaoSalvarAdicionar = view.findViewById(R.id.botaoSalvarAdicionar)
+            Navigation.findNavController(view).navigate(R.id.action_adicionarContatoFragment_to_listaContatosFragment)
+        }
 
 
-        return inflater.inflate(R.layout.fragment_adicionar_contato, container, false)
+        return view
     }
 
     companion object {
